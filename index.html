@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brainpedia Notes – Free English Notes for Students</title>
+  <meta name="description" content="Free English notes, grammar, figures of speech, and exam preparation for Pakistani students."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:      #0f172a;
+      --paper:    #f8f7f2;
+      --accent:   #2563eb;
+      --accent2:  #7c3aed;
+      --muted:    #64748b;
+      --rule:     #e2e0d8;
+      --white:    #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--paper);
+      border-bottom: 1px solid var(--rule);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 900;
+      color: var(--ink); text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.875rem; font-weight: 500;
+      color: var(--muted); text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-btn {
+      background: var(--accent); color: var(--white);
+      padding: 0.5rem 1.25rem; border-radius: 6px;
+      font-size: 0.875rem; font-weight: 600;
+      text-decoration: none; transition: opacity .2s;
+    }
+    .nav-btn:hover { opacity: .85; }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 900px; margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.3rem 1rem; border-radius: 999px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900; line-height: 1.1;
+      letter-spacing: -1.5px; margin-bottom: 1.25rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 1.125rem; color: var(--muted);
+      max-width: 580px; margin: 0 auto 2.5rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--accent); color: var(--white);
+      padding: 0.85rem 2rem; border-radius: 8px;
+      font-weight: 600; text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 14px rgba(37,99,235,.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,99,235,.45); }
+    .btn-outline {
+      border: 1.5px solid var(--rule); color: var(--ink);
+      padding: 0.85rem 2rem; border-radius: 8px;
+      font-weight: 600; text-decoration: none; background: var(--white);
+      transition: border-color .2s;
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── STATS ── */
+    .stats {
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      display: flex; justify-content: center; flex-wrap: wrap;
+      gap: 0; background: var(--white);
+    }
+    .stat {
+      flex: 1; min-width: 160px;
+      padding: 2rem 1.5rem; text-align: center;
+      border-right: 1px solid var(--rule);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.25rem; font-weight: 900;
+      color: var(--accent); line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.8rem; color: var(--muted);
+      font-weight: 500; margin-top: 0.4rem;
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 900; letter-spacing: -0.5px;
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      color: var(--muted); font-size: 1rem;
+      max-width: 520px; margin-bottom: 3rem;
+    }
+
+    /* ── TOPICS GRID ── */
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 12px; padding: 1.75rem;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .card:hover { box-shadow: 0 8px 30px rgba(0,0,0,.08); transform: translateY(-3px); }
+    .card-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; margin-bottom: 1rem;
+    }
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;
+    }
+    .card p { font-size: 0.875rem; color: var(--muted); }
+    .card-link {
+      display: inline-block; margin-top: 1rem;
+      font-size: 0.8rem; font-weight: 600; color: var(--accent);
+      text-decoration: none; letter-spacing: 0.5px;
+    }
+    .card-link:hover { text-decoration: underline; }
+
+    /* ── FEATURES ── */
+    #features { background: var(--ink); color: var(--white); }
+    #features .section-label { color: #818cf8; }
+    #features .section-title { color: var(--white); }
+    #features .section-sub { color: #94a3b8; }
+    .feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+    .feat-item { border-top: 2px solid #1e293b; padding-top: 1.25rem; }
+    .feat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 900; color: #818cf8;
+      line-height: 1; margin-bottom: 0.5rem;
+    }
+    .feat-item h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .feat-item p { font-size: 0.875rem; color: #94a3b8; }
+
+    /* ── CTA ── */
+    #cta {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      color: var(--white); text-align: center;
+    }
+    #cta .section-title { color: var(--white); }
+    #cta p { color: rgba(255,255,255,.8); font-size: 1.1rem; max-width: 480px; margin: 0 auto 2rem; }
+    .btn-white {
+      background: var(--white); color: var(--accent);
+      padding: 0.9rem 2.25rem; border-radius: 8px;
+      font-weight: 700; text-decoration: none; display: inline-block;
+      transition: transform .2s;
+    }
+    .btn-white:hover { transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink); color: #64748b;
+      text-align: center; padding: 2rem;
+      font-size: 0.8rem;
+    }
+    footer a { color: #818cf8; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 1rem; }
+      .nav-links { display: none; }
+      .hero { padding: 3rem 1.25rem 2.5rem; }
+      section { padding: 3.5rem 1.25rem; }
+      .stat { border-right: none; border-bottom: 1px solid var(--rule); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">Brain<span>pedia</span> Notes</a>
+  <ul class="nav-links">
+    <li><a href="#topics">Topics</a></li>
+    <li><a href="#features">Why Us</a></li>
+    <li><a href="https://brainpedianotes.blogspot.com" target="_blank">Blog</a></li>
+  </ul>
+  <a class="nav-btn" href="https://brainpedianotes.blogspot.com" target="_blank">Read Notes →</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <span class="hero-eyebrow">Free for Every Student</span>
+  <h1>Master English.<br/><em>Notes That Work.</em></h1>
+  <p>Clear, exam-ready English notes for Pakistani students — grammar, figures of speech, tenses, and more. All free, forever.</p>
+  <div class="hero-btns">
+    <a class="btn-primary" href="https://brainpedianotes.blogspot.com" target="_blank">Start Reading Free</a>
+    <a class="btn-outline" href="#topics">Explore Topics</a>
+  </div>
+</header>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">100+</div><div class="stat-label">Notes Published</div></div>
+  <div class="stat"><div class="stat-num">10K+</div><div class="stat-label">Students Helped</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Free Always</div></div>
+  <div class="stat"><div class="stat-num">5★</div><div class="stat-label">Student Rated</div></div>
+</div>
+
+<!-- TOPICS -->
+<section id="topics">
+  <div class="container">
+    <p class="section-label">Study Material</p>
+    <h2 class="section-title">Everything You Need to Pass</h2>
+    <p class="section-sub">Carefully written notes covering your full English syllabus — from beginner to board exam level.</p>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon">📝</div>
+        <h3>English Grammar</h3>
+        <p>Parts of speech, sentence structure, tenses, active & passive voice — all explained simply.</p>
+        <a class="card-link" href="https://brainpedianotes.blogspot.com" target="_blank">Read Notes →</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎨</div>
+        <h3>Figures of Speech</h3>
+        <p>Simile, metaphor, alliteration, personification and more — with examples and exercises.</p>
+        <a class="card-link" href="https://brainpedianotes.blogspot.com" target="_blank">Read Notes →</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">⏰</div>
+        <h3>English Tenses</h3>
+        <p>All 12 tenses with rules, structures, and 100+ examples. Perfect for board and entry tests.</p>
+        <a class="card-link" href="https://brainpedianotes.blogspot.com" target="_blank">Read Notes →</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">✍️</div>
+        <h3>Essay & Letter Writing</h3>
+        <p>Model essays, formal and informal letters, and paragraph writing for exams.</p>
+        <a class="card-link" href="https://brainpedianotes.blogspot.com" target="_blank">Read Notes →</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">📖</div>
+        <h3>Comprehension</h3>
+        <p>Practice passages with answers to build your reading and critical thinking skills.</p>
+        <a class="card-link" href="https://brainpedianotes.blogspot.com" target="_blank">Read Notes →</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Exam Preparation</h3>
+        <p>MCQs, past paper analysis, and important questions for matric and intermediate exams.</p>
+        <a class="card-link" href="https://brainpedianotes.blogspot.com" target="_blank">Read Notes →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <p class="section-label">Why Brainpedia Notes</p>
+    <h2 class="section-title">Built for Pakistani Students</h2>
+    <p class="section-sub">Every note is written with the Pakistani curriculum in mind — clear, simple, and straight to the point.</p>
+    <div class="feat-grid">
+      <div class="feat-item">
+        <div class="feat-num">01</div>
+        <h4>Simple Language</h4>
+        <p>No complicated jargon. Concepts explained in easy English so every student can understand.</p>
+      </div>
+      <div class="feat-item">
+        <div class="feat-num">02</div>
+        <h4>Exam Focused</h4>
+        <p>Notes are designed around what actually comes in matric, inter, and entry test exams.</p>
+      </div>
+      <div class="feat-item">
+        <div class="feat-num">03</div>
+        <h4>Always Free</h4>
+        <p>No login. No fees. No paywalls. Every note is free to read, download, and share.</p>
+      </div>
+      <div class="feat-item">
+        <div class="feat-num">04</div>
+        <h4>Regularly Updated</h4>
+        <p>New notes added regularly to keep up with syllabus changes and student needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container">
+    <h2 class="section-title">Ready to Study Smarter?</h2>
+    <p>Join thousands of students across Pakistan who use Brainpedia Notes to prepare for their exams.</p>
+    <a class="btn-white" href="https://brainpedianotes.blogspot.com" target="_blank">Go to Brainpedia Notes →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <a href="https://brainpedianotes.blogspot.com" target="_blank">Brainpedia Notes</a> — Free English Notes for Pakistani Students. Made with ❤️ in D.I. Khan.</p>
+</footer>
+
+</body>
+</html>
